@@ -1,7 +1,5 @@
 # react-viewerjs
 
-[以中文查看](README.md)
-
 Image preview;React wrapper for [viewerjs](https://github.com/fengyuanchen/viewerjs)
 
 
@@ -74,7 +72,7 @@ const BaseDemoComponent = () => {
 };
 ReactDOM.render(<BaseDemoComponent />, document.getElementById('root'));
 ````
-https://xiabingwu.github.io/react-viewerjs/#/ 
+https://israel6.github.io/react-viewerjs/
 
 - #### list
 ````jsx
@@ -110,4 +108,4 @@ const ListDemoComponent = () => {
 };
 ReactDOM.render(<ListDemoComponent />, document.getElementById('root'));
 ````
-https://xiabingwu.github.io/react-viewerjs/#/list
+https://israel6.github.io/react-viewerjs/list

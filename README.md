@@ -157,4 +157,4 @@ Si quieres que haga el `Dockerfile` o un script cross-platform para arrancar tod
 Preparado en máquina local: Administrador
 Fecha: 2025-10-27
 Nota: Este README fue actualizado en la máquina local antes de subir el proyecto al repositorio GitHub del usuario.
-https://xiabingwu.github.io/react-viewerjs/#/list
+https://israel6.github.io/react-viewerjs/
