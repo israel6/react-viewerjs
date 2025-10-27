@@ -1,7 +1,7 @@
 import React from "react"
 import { RViewer, RViewerTrigger } from '../react-viewerjs'
 const OneImagePreview = () => {
-  let sourceUrl = "./imgs/1.jpg"
+  let sourceUrl = "./imgs/image2.jpg"
   let options={
     toolbar: {//Since there is only one picture, let's hide "prev" and "next"
       prev: false,
@@ -17,7 +17,7 @@ const OneImagePreview = () => {
   )
 }
 const MultiImagePreview = () => {
-  let sourceUrl = ["./imgs/1.jpg","./imgs/2.jpg","./imgs/3.jpg","./imgs/4.jpg","./imgs/5.jpg"]
+  let sourceUrl = ["./imgs/image2.jpg","./imgs/image3.jpg","./imgs/logo.png"]
   return (
     <RViewer imageUrls={sourceUrl}>
       <RViewerTrigger>

@@ -5,6 +5,10 @@ import ListDemoComponent from './components/ListDemoComponent'
 const App = () => (
   <Router>
     <div>
+      <nav style={{margin: "20px"}}>
+        <Link to="/" style={{marginRight: "20px"}}>Vista Básica</Link>
+        <Link to="/list">Vista Lista</Link>
+      </nav>
       <Route exact path="/" component={BaseDemoComponent} />
       <Route path="/list" component={ListDemoComponent} />
     </div>

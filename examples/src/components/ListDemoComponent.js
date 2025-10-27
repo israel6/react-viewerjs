@@ -2,11 +2,9 @@ import React from "react"
 import { RViewer, RViewerTrigger } from '../react-viewerjs'
 const ListDemoComponent = () => {
   let sourceImageUrls = [
-    "./imgs/1.jpg",
-    "./imgs/2.jpg",
-    "./imgs/3.jpg",
-    "./imgs/4.jpg",
-    "./imgs/5.jpg"
+    "./imgs/image2.jpg",
+    "./imgs/image3.jpg",
+    "./imgs/logo.png"
   ]
   let thumbImageUrls = sourceImageUrls//In reality, the thumbnail and the original may not be the same, which are set to be equal, just for the sake of a simple demonstration
   return (
