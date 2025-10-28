@@ -2,6 +2,7 @@ import React from "react"
 import { HashRouter as Router, Route, Link } from "react-router-dom"
 import ImageViewerBase from './components/ImageViewerBase.jsx'
 import ImageViewerList from './components/ImageViewerList.jsx'
+import './viewer-overrides-enhanced.css'
 const App = () => (
   <Router>
     <div style={{

@@ -1,40 +1,40 @@
 # react-viewerjs
 
-[View README in English](README-en.md)
+[Ver README en Inglés](README-en.md)
 
-图片预览;对[viewerjs](https://github.com/fengyuanchen/viewerjs)库的react封装
+Vista previa de imágenes; Envoltura de React para la biblioteca [viewerjs](https://github.com/fengyuanchen/viewerjs)
 
 
-## 安装
+## Instalación
 
 npm i react-viewerjs
 
 ## API
 
-### RViewer组件配置参数
+### Parámetros de configuración del componente RViewer
 
-| 参数        | 说明     | 类型           | 默认值  | 是否必须 |
-| --------- | ------ | ------------ | ---- | ---- |
-| imageUrls | 单张图片预览地址（使用字符串）或者多张图片预览地址集合（使用数组） | string\|array | undefined    | 是 |
-| options | 预览配置参见（[viewerjs options](https://github.com/fengyuanchen/viewerjs#options)） | object | undefined    | 否 |
+| Parámetro   | Descripción | Tipo         | Valor por defecto | Requerido |
+| ----------- | ----------- | ------------ | ----------------- | ---------- |
+| imageUrls   | URL de una imagen para vista previa (usando cadena) o colección de URLs de imágenes para vista previa (usando arreglo) | string\|array | undefined | Sí |
+| options     | Configuración de vista previa (ver [viewerjs options](https://github.com/fengyuanchen/viewerjs#options)) | object | undefined | No |
 
-### RViewerTrigger组件说明
+### Descripción del componente RViewerTrigger
 
-该组件只有一个元素，用于触发图片预览
+Este componente tiene solo un elemento hijo, usado para activar la vista previa de imágenes
 
-| 参数        | 说明     | 类型           | 默认值 | 是否必须 |
-| --------- | ------ | ------------ | ---- | ---- |
-| index | 预览触发显示索引为index图片，默认为0，显示第一张 | number | 0    | 否 |
+| Parámetro  | Descripción | Tipo  | Valor por defecto | Requerido |
+| ---------- | ----------- | ----- | ----------------- | ---------- |
+| index      | En la colección de imágenes, selecciona la imagen en el índice para vista previa, por defecto 0, muestra la primera | number | 0 | No |
 
 
-- #### 基础
+- #### Básico
 ````jsx
 import React from "react"
 import { RViewer, RViewerTrigger } from '../react-viewerjs'
 const OneImagePreview = () => {
   let sourceUrl = "./imgs/1.jpg"
   let options={
-    toolbar: {//单张图片预览不要pre和next底部按钮，隐藏它
+    toolbar: {//Para una sola imagen, ocultar los botones prev y next en la barra de herramientas
       prev: false,
       next: false
     }
@@ -42,7 +42,7 @@ const OneImagePreview = () => {
   return (
     <RViewer options={options} imageUrls={sourceUrl}>
       <RViewerTrigger>
-        <button>one image preview</button>
+        <button>vista previa de una imagen</button>
       </RViewerTrigger>
     </RViewer>
   )
@@ -52,7 +52,7 @@ const MultiImagePreview = () => {
   return (
     <RViewer imageUrls={sourceUrl}>
       <RViewerTrigger>
-        <button>Multiple images preview</button>
+        <button>Vista previa de múltiples imágenes</button>
       </RViewerTrigger>
     </RViewer>
   )
@@ -69,7 +69,7 @@ const BaseDemoComponent = () => {
 ReactDOM.render(<BaseDemoComponent />, document.getElementById('root'));
 ````
 
-- #### 列表
+- #### Lista
 ````jsx
 import React from "react"
 import { RViewer, RViewerTrigger } from '../react-viewerjs'
@@ -81,15 +81,15 @@ const ListDemoComponent = () => {
     "./imgs/4.jpg",
     "./imgs/5.jpg"
   ]
-  let thumbImageUrls = sourceImageUrls//小图和原图一样，只是为了演示方便
+  let thumbImageUrls = sourceImageUrls//Las miniaturas y las imágenes originales son las mismas, solo para demostración
   return (
     <RViewer imageUrls={sourceImageUrls}>
       <ul>
         {thumbImageUrls.map((pic, index) => {
           return (
             <li  key={index} style={{marginBottom:"20PX"}}>
-              <span>image {index+1}</span>
-              {/*这里需要设置index值，告知触发图片预览该显示哪张图片*/}
+              <span>imagen {index+1}</span>
+              {/*Aquí se necesita establecer el valor index para informar cuál imagen mostrar al activar la vista previa*/}
               <RViewerTrigger index={index}>
                 <img src={pic} style={{width:"50px",verticalAlign:"middle"}}  />
               </RViewerTrigger>
@@ -107,46 +107,60 @@ ReactDOM.render(<ListDemoComponent />, document.getElementById('root'));
 
 Estos pasos facilitan ejecutar el ejemplo en otra máquina y evitar problemas de versión de Node.
 
-1) Usar la versión recomendada de Node
+### 1) Usar la versión recomendada de Node
 
-- Este repo incluye `.nvmrc` con la versión recomendada (14.21.3). Si usas nvm / nvm-windows:
+Este repo incluye `.nvmrc` con la versión recomendada (14.21.3). Si usas nvm / nvm-windows:
 
-  nvm install
-  nvm use
+```bash
+nvm install
+nvm use
+```
 
-  Si no usas nvm, instala Node 14 LTS manualmente.
+Si no usas nvm, instala Node 14 LTS manualmente.
 
-2) Instalar dependencias
+### 2) Instalar dependencias
 
 Desde la raíz del proyecto puedes ejecutar el script de ayuda que instala las dependencias del ejemplo:
 
-  npm run bootstrap
+```bash
+npm run bootstrap
+```
 
 O manualmente:
 
-  cd examples
-  npm install
+```bash
+cd examples
+npm install
+```
 
-3) Variables de entorno
+### 3) Variables de entorno
 
 Si necesitas integrar servicios externos (por ejemplo Mistral/Continue) crea un archivo `examples/.env` copiando `examples/.env.example` y poniendo tus claves:
 
-  MISTRAL_API_KEY=tu_valor_aqui
+```bash
+MISTRAL_API_KEY=tu_valor_aqui
+```
 
 O configura la variable en Windows (temporal en sesión):
 
-  $env:MISTRAL_API_KEY = "tu_valor"
+```powershell
+$env:MISTRAL_API_KEY = "tu_valor"
+```
 
 Para persistir la variable en Windows:
 
-  setx MISTRAL_API_KEY "tu_valor"
+```cmd
+setx MISTRAL_API_KEY "tu_valor"
+```
 
-4) Ejecutar la demo
+### 4) Ejecutar la demo
 
-  cd examples
-  npm start
+```bash
+cd examples
+npm start
+```
 
-5) Notas
+### 5) Notas
 
 - Añadimos `engines` en los `package.json` y `.nvmrc` para indicar la versión de Node recomendada.
 - Si prefieres una solución totalmente reproducible, puedo preparar un `Dockerfile` para contenerizar la demo.
