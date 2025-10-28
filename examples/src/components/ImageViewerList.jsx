@@ -1,6 +1,6 @@
 import React from "react"
 import { RViewer, RViewerTrigger } from '../react-viewerjs'
-const ListDemoComponent = () => {
+const ImageViewerList = () => {
   let sourceImageUrls = [
     "./imgs/image2.jpg",
     "./imgs/image3.jpg",
@@ -26,4 +26,4 @@ const ListDemoComponent = () => {
     </RViewer>
   )
 };
-export default ListDemoComponent
+export default ImageViewerList

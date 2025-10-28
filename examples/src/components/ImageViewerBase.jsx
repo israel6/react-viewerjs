@@ -26,8 +26,7 @@ const MultiImagePreview = () => {
     </RViewer>
   )
 }
-const BaseDemoComponent = () => {
-  
+const ImageViewerBase = () => {
   return (
     <div>
       <OneImagePreview />
@@ -35,4 +34,4 @@ const BaseDemoComponent = () => {
     </div>
   )
 };
-export default BaseDemoComponent
+export default ImageViewerBase
