@@ -19,7 +19,7 @@ Note: This file was updated on the local development machine prior to uploading 
 | Property        | Description     | Type           | Default  | Required |
 | --------- | ------ | ------------ | ---- | ---- |
 | imageUrls | A picture or a collection of pictures for preview | string\|array | undefined    | true |
-| options | preview config（[viewerjs options](https://github.com/fengyuanchen/viewerjs#options)） | object | undefined    | false |
+| options | preview config | object | undefined    | false |
 
 ### RViewerTrigger
 
