@@ -16,7 +16,7 @@ npm i react-viewerjs
 | Parámetro   | Descripción | Tipo         | Valor por defecto | Requerido |
 | ----------- | ----------- | ------------ | ----------------- | ---------- |
 | imageUrls   | URL de una imagen para vista previa (usando cadena) o colección de URLs de imágenes para vista previa (usando arreglo) | string\|array | undefined | Sí |
-| options     | Configuración de vista previa (ver [viewerjs options](https://github.com/fengyuanchen/viewerjs#options)) | object | undefined | No |
+| options     | Configuración de vista previa | object | undefined | No |
 
 ### Descripción del componente RViewerTrigger
 
