@@ -1,0 +1,98 @@
+/* SOLUCIÓN ULTRA AGRESIVA - ELIMINAR COMPLETAMENTE TODOS LOS CUADROS BLANCOS */
+
+/* Aplicar a TODOS los elementos del toolbar */
+.viewer-toolbar li,
+.viewer-toolbar > ul > li,
+.viewer-toolbar ul li,
+.viewer-toolbar li *,
+.viewer-toolbar > ul > li *,
+.viewer-toolbar ul li *,
+.viewer-toolbar li:hover,
+.viewer-toolbar > ul > li:hover,
+.viewer-toolbar ul li:hover,
+.viewer-toolbar li:active,
+.viewer-toolbar > ul > li:active,
+.viewer-toolbar ul li:active,
+.viewer-toolbar li:focus,
+.viewer-toolbar > ul > li:focus,
+.viewer-toolbar ul li:focus,
+.viewer-toolbar li:visited,
+.viewer-toolbar > ul > li:visited,
+.viewer-toolbar ul li:visited {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  outline: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+
+/* Eliminar COMPLETAMENTE todos los pseudo-elementos */
+.viewer-toolbar li::before,
+.viewer-toolbar li::after,
+.viewer-toolbar > ul > li::before,
+.viewer-toolbar > ul > li::after,
+.viewer-toolbar ul li::before,
+.viewer-toolbar ul li::after,
+.viewer-toolbar li:hover::before,
+.viewer-toolbar li:hover::after,
+.viewer-toolbar li:active::before,
+.viewer-toolbar li:active::after,
+.viewer-toolbar li:focus::before,
+.viewer-toolbar li:focus::after {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  content: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Toolbar background */
+.viewer-toolbar {
+  background: #404040 !important;
+  border-radius: 20px !important;
+  padding: 8px !important;
+  box-shadow: none !important;
+}
+
+/* Asegurar que los iconos personalizados sean visibles */
+.custom-icon {
+  color: white !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-shadow: none !important;
+  display: block !important;
+  text-align: center !important;
+  line-height: 40px !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
