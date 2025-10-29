@@ -1,0 +1,27 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# React/JSX files
+*.jsx linguist-language=JavaScript
+*.js linguist-language=JavaScript
+*.tsx linguist-language=TypeScript
+*.ts linguist-language=TypeScript
+
+# CSS files
+*.css linguist-language=CSS
+
+# HTML files
+*.html linguist-language=HTML
+
+# JSON files
+*.json linguist-language=JSON
+
+# Markdown files
+*.md linguist-language=Markdown
+
+# Binary files
+*.png linguist-detectable
+*.jpg linguist-detectable
+*.jpeg linguist-detectable
+*.gif linguist-detectable
+*.svg linguist-detectable

@@ -1,0 +1,22 @@
+# Linguist configuration for GitHub language detection
+# This file helps GitHub better understand the project structure
+
+# Mark files as documentation
+docs/** linguist-documentation
+*.md linguist-documentation
+README* linguist-documentation
+
+# Mark build files as generated
+build/** linguist-generated
+node_modules/** linguist-vendored
+
+# Ensure React/JSX files are counted as JavaScript
+src/**/*.jsx linguist-language=JavaScript
+src/**/*.js linguist-language=JavaScript
+
+# Mark CSS files
+src/**/*.css linguist-language=CSS
+
+# Mark HTML files
+public/**/*.html linguist-language=HTML
+src/**/*.html linguist-language=HTML

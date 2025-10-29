@@ -1,27 +1,40 @@
 {
-  "name": "react-viewerjs-example",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "react-viewerjs": "0.1.7"
-  },
+  "name": "react-viewerjs",
+  "version": "1.0.0",
+  "description": "A React component for image viewing with custom toolbar buttons",
+  "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "engines": {
-    "node": "14.x"
+  "keywords": [
+    "react",
+    "image-viewer",
+    "viewerjs",
+    "component",
+    "javascript",
+    "jsx"
+  ],
+  "author": "israel6",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "5.0.1"
   },
-  "homepage": "https://israel6.github.io/react-viewerjs/",
-  "devDependencies": {
-    "gh-pages": "^1.1.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
