@@ -1,5 +1,4 @@
-// Adds the class that enables modern viewer icons.
-// If you want the original icons back, remove this import from `index.js` or remove the class `viewer-icons-modern` from <body>.
+// Simple viewer icons optimization
 (function(){
   function enable() {
     try {
@@ -11,5 +10,7 @@
       });
     }
   }
+
+  // Enable icons
   enable();
 })();

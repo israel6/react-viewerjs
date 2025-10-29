@@ -1,5 +1,72 @@
 /* Scoped viewer overrides — only active when the page has the class `viewer-icons-modern` on the <body> element. */
 
+/* Optimización sutil para mostrar iconos más rápido */
+body.viewer-icons-modern .viewer-toolbar {
+  transform: translateZ(0);
+  will-change: transform;
+  opacity: 1 !important;
+}
+
+/* Transiciones más rápidas para iconos */
+body.viewer-icons-modern .viewer-toolbar li {
+  background-color: rgba(255,255,255,0.95) !important;
+  border-radius: 4px !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
+  transition: transform .08s ease, box-shadow .08s ease !important;
+  position: relative !important;
+  opacity: 1 !important;
+}
+
+body.viewer-icons-modern .viewer-toolbar li:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12) !important;
+}
+
+/* tooltip / textual hint below each button on hover to make action explicit */
+body.viewer-icons-modern .viewer-toolbar li::after{
+  content: '';
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15,23,32,0.95);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .08s ease, transform .08s ease;
+}
+body.viewer-icons-modern .viewer-toolbar li:hover::after{
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* specific labels (tooltips) */
+body.viewer-icons-modern .viewer-prev::after{ content: 'Previous'; }
+body.viewer-icons-modern .viewer-next::after{ content: 'Next'; }
+body.viewer-icons-modern .viewer-zoom-in::after{ content: 'Zoom In'; }
+body.viewer-icons-modern .viewer-zoom-out::after{ content: 'Zoom Out'; }
+body.viewer-icons-modern .viewer-rotate-left::after{ content: 'Rotate Left'; }
+body.viewer-icons-modern .viewer-rotate-right::after{ content: 'Rotate Right'; }
+body.viewer-icons-modern .viewer-fullscreen::after{ content: 'Enter Fullscreen'; }
+body.viewer-icons-modern .viewer-fullscreen-exit::after{ content: 'Exit Fullscreen'; }
+body.viewer-icons-modern .viewer-close::after{ content: 'Close'; }
+
+/* Immediate icon visibility optimization */
+body.viewer-icons-modern .viewer-toolbar li:before {
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
 body.viewer-icons-modern .viewer-toolbar li:before {
   background-image: none !important;
   background-repeat: no-repeat !important;
@@ -28,7 +95,7 @@ body.viewer-icons-modern .viewer-toolbar li {
   align-items: center !important;
   justify-content: center !important;
   box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
-  transition: transform .12s ease, box-shadow .12s ease !important;
+  transition: transform .08s ease, box-shadow .08s ease, opacity .05s ease !important;
   position: relative !important;
 }
 
@@ -52,7 +119,7 @@ body.viewer-icons-modern .viewer-toolbar li::after{
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .12s ease, transform .12s ease;
+  transition: opacity .08s ease, transform .08s ease;
 }
 body.viewer-icons-modern .viewer-toolbar li:hover::after{
   opacity: 1;
@@ -70,41 +137,49 @@ body.viewer-icons-modern .viewer-fullscreen::after{ content: 'Enter Fullscreen';
 body.viewer-icons-modern .viewer-fullscreen-exit::after{ content: 'Exit Fullscreen'; }
 body.viewer-icons-modern .viewer-close::after{ content: 'Close'; }
 
-/* Keep SVG background icons as primary, but provide glyph fallbacks (text) so they're always visible on all platforms */
+/* Optimized icons using Unicode symbols for faster rendering */
 body.viewer-icons-modern .viewer-prev:before{
   content: '‹' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M15.7 6.3a1 1 0 0 0-1.4 0L9 11.6a1 1 0 0 0 0 1.4l5.3 5.3a1 1 0 0 0 1.4-1.4L11.4 12l4.3-4.3a1 1 0 0 0 0-1.4z'/></svg>") !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 body.viewer-icons-modern .viewer-next:before{
   content: '›' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M8.3 17.7a1 1 0 0 0 1.4 0L15 12.4a1 1 0 0 0 0-1.4L9.7 5.7a1 1 0 1 0-1.4 1.4L12.6 12l-4.3 4.3a1 1 0 0 0 0 1.4z'/></svg>") !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 
 body.viewer-icons-modern .viewer-zoom-in:before{
   content: '+' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M11 5a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 2a1 1 0 0 1 1 1v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1H9a1 1 0 1 1 0-2h1V8a1 1 0 0 1 1-1z'/><path fill='%230f1720' d='M20.7 20.3a1 1 0 0 0-1.4 0l-3.2 3.2a1 1 0 0 0 1.4 1.4l3.2-3.2a1 1 0 0 0 0-1.4z' transform='translate(-6 -6)'/></svg>") !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 body.viewer-icons-modern .viewer-zoom-out:before{
   content: '−' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M11 5a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-3 6a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1z'/></svg>") !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 
 body.viewer-icons-modern .viewer-rotate-left:before{
-  content: '⟲' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M7 7v6h6a1 1 0 0 0 0-2H9.4A7 7 0 1 1 7 7z'/></svg>") !important;
+  content: '↶' !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 body.viewer-icons-modern .viewer-rotate-right:before{
-  content: '⟳' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M17 7v6h-6a1 1 0 0 1 0-2h4.6A7 7 0 1 0 17 7z'/></svg>") !important;
+  content: '↷' !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 
 body.viewer-icons-modern .viewer-fullscreen:before,
 body.viewer-icons-modern .viewer-fullscreen-exit:before{
   content: '⤢' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M4 8V4h4' /><path fill='%230f1720' d='M20 16v4h-4' /><path fill='%230f1720' d='M20 4h-6v2h4v4h2V4z' /><path fill='%230f1720' d='M4 20h6v-2H6v-4H4v6z'/></svg>") !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 
 body.viewer-icons-modern .viewer-close:before{
   content: '×' !important;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230f1720' d='M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7A1 1 0 0 0 5.7 7.1L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z'/></svg>") !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
 }
